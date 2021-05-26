@@ -8,6 +8,8 @@
 \usepackage{wrapfig}
 \usepackage{enumitem}
 \usepackage{authblk}
+\usepackage{csquotes}
+\usepackage{ulem}
 
 \title{Crittografia classica e quantistica}
 \author{Alessandro Minisini}
@@ -16,4 +18,48 @@
 
 \begin{document}
   \maketitle
+  \section{La crittografia: definizione e cenni storici}
+    La crittografia è l'arte di creare dei messaggi nascosti, ovvero messaggi che nono impossibili da leggere per una persona non autorizzata a conoscerne il contenuto.\\
+    Inizialmente la crittografia aveva poco a che fare con quella che utilizziamo al giorno d'oggi, infatti non si basava su algoritmi basati su dimostrazioni matematiche, ma su semplici escamotage per nascondere il messaggio addosso al corriere.\\
+    \sout{
+    I primi esempi li possiamo trovare nella Grecia antica: Plutarco ci parla della cosiddetta scitale spartana. Quest'ultima consisteva nell'arrotolare una cintura di cuoio attorno ad un bastone di diametro fissato e, a questo punto, trascrivere il messaggio partendo da un'estremità del bastone all'altra, parallelamente all'asse. Infine si svolggeva il cuoio e si trasmetteva al destinatario. Per poter leggere il messaggio era necessario utilizzare un bastone con lo stesso diametro, altrimenti riavvolgendo il messaggio le lettere non sarebbero state allineate. Un'altra tecnica e quella steganografica. Un esempio celebre è quello utilizzato da Mileto: si rasava la testa di un uomo e vi si scriveva sopra il messaggio e, quando i capelli erano ricresciuti, si mandava l'uomo a consegnare il messaggio.
+    Ovviamente queste tecniche, soprattutto la seconda, erano concentrate sul nascondere il messaggio, piuttosto che renderlo illeggibile agli occhi di un esterno.}\\
+    Il primo cifrario considerato tale è il cosiddetto "Cifrario di Cesare", utilizzato in ambito militare per comunicare con i vari comandanti sparsi per il mediterraneo.
+    Inizialmente Cesare, come scrive lui stesso nel "De bello gallico", decise di cambiare le lettere dell'alfabeto latino con quelle greche:
+    \newpage
+    \begin{displayquote}[De Bello Gallico V, 48.2-4]
+      \textit{ibi ex captivis cognoscit, quae apud Ciceronem gerantur quantoque in periculo res sit.
+      Tum cuidam ex equitibus Gallis magnis preamiis persuadet, uti Ciceronem epistulam deferat.
+      Hanc Graecis conscriptam litteris mittit, ne intecepta epistula nostra ab hostibus consilia cognoscantur.}
+    \end{displayquote}
+    Ai tempi di Cesare, questo sistema poteva essere considerato sicuro, poiché lo studio del greco era riservato solo alla classe dirigente romana che poteva permettersi un precettore
+    privato e costosi viaggi di studio in Grecia.\\
+    Questo non è l’unico caso accertato di uso di cifrari a trsposizione da parte di Cesare; si sa, infatti, che Cesare ricorreva spessissimo a cifrari per trasposizione, anche per comunicare coi parenti. Sappiamo, in proposito che la cifratura era talmente tanto spesso utilizzata da Cesare, che Valerio Probo dedicò ai suoi cifrari un intero trattato, che purtroppo è andato perduto. Ma ci sono altre testimonianze, come quelle di Svetonio. Si legge infatti nelle “Vite dei Cesari“:
+    \begin{displayquote}[Vita di Cesare, 56]
+      \textit{Extant et ad Ciceronem, item ad familiares domesticis de rebus, in quibus, si qua occultius perferenda erant, per notas scripsit, id est sic structo litterarum ordine, ut nullum verbum effici posset: quae si qui investigare et persequi velit, quartam elementorum litteram, id est D pro A et perinde reliquas commutet.\\}
+    \end{displayquote}
+    Come ci dice Svetonio, il cifrario di Cesare era molto semplice da utilizzare: ogni lettera del testo in chiaro viene sostituita con una lettera che si trova ad un numero fissato di posizioni successive. Questi tipi di cifrario si dicono cifrari a sostituzione o scorrimento.\\
+    Il funzionamento di questo cifrario può essere descritto tramite l'aritmetica modulare: la funzione che descrive lo scambio della lettera in posizione $x$ è la seguente
+    $$f(x)\equiv x+y \mod{m}$$
+    dove $m$ è il numero di lettere dell'alfabeto.\\
+    Da questa si può ricavare facilmente la funzione inversa, che garantisce la validità della cifratura:
+    \begin{align*}
+      f(x) & \equiv x+y \mod{m}\\
+      f(x)-x & \equiv y \mod{m}\\
+      x & \equiv f(x)-y \mod{m}\\
+    \end{align*}
+    Dunque
+    $$f^{-1}(x)\equiv x-y \mod{m}$$
+    Questi tipi di cifratura sono ormai considerati obsoleti, pocihé la potenza di calcolo di un computer permette di provare ogni singola combinazione di lettere in un tempo irrisorio.\\
+    In realtà, questo tipo di cifratura è stato superato già nel Medioevo. \\ Un matematico arabo chiamato al-Kindi (IX secolo d.C.) elaborò un metodo di decrittazione basato sull'analisi delle frequenze: le lettere più frequenti nel messaggio devono corrispondere con le lettere più usate dalla lingua del messaggio originale. Questo fatto permette di ridurre drasticamente il numero di tentativi necessari, permettendo di decrittare il messaggio anche a mano.
+    \newpage
+  \section{Crittografia a chiave asimmetrica: algoritmo RSA}
+    Supponiamo che Alice e Bob vogliano comunicare in modo sicuro.\\
+    Innanzitutto, Alice sceglie due numeri primi $p$ e $q$ e chiama $N$ il loro prodotto $pq$.\\
+    Sceglie poi un numero $r\in\mathbb{Z}$ tale che $MCD(r,\varphi(N))=1$, dove $\varphi(x)$ è la funzione toziente di Eulero.\\
+    A questo punto la chiave pubblica che Alice ha prodotto sarà la coppia di valori $(N,r)$.
+    Privatamente poi, Alice calcola un nuovo valore $s$ verifichi la seguente equazione
+    $$\varphi(N)t+rs=1$$
+    L'esistenza di tale valore è garantita dal teorema di Bezout, siccome $r$ e $\varphi(N)$ sono coprimi.
+
 \end{document}
