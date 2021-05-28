@@ -53,13 +53,21 @@
     Questi tipi di cifratura sono ormai considerati obsoleti, pocihé la potenza di calcolo di un computer permette di provare ogni singola combinazione di lettere in un tempo irrisorio.\\
     In realtà, questo tipo di cifratura è stato superato già nel Medioevo. \\ Un matematico arabo chiamato al-Kindi (IX secolo d.C.) elaborò un metodo di decrittazione basato sull'analisi delle frequenze: le lettere più frequenti nel messaggio devono corrispondere con le lettere più usate dalla lingua del messaggio originale. Questo fatto permette di ridurre drasticamente il numero di tentativi necessari, permettendo di decrittare il messaggio anche a mano.
     \newpage
-  \section{Crittografia a chiave asimmetrica: algoritmo RSA}
-    Supponiamo che Alice e Bob vogliano comunicare in modo sicuro.\\
-    Innanzitutto, Alice sceglie due numeri primi $p$ e $q$ e chiama $N$ il loro prodotto $pq$.\\
-    Sceglie poi un numero $r\in\mathbb{Z}$ tale che $MCD(r,\varphi(N))=1$, dove $\varphi(x)$ è la funzione toziente di Eulero.\\
-    A questo punto la chiave pubblica che Alice ha prodotto sarà la coppia di valori $(N,r)$.
-    Privatamente poi, Alice calcola un nuovo valore $s$ verifichi la seguente equazione
-    $$\varphi(N)t+rs=1$$
-    L'esistenza di tale valore è garantita dal teorema di Bezout, siccome $r$ e $\varphi(N)$ sono coprimi.
+  \section{Crittografia a chiave pubblica}
+    I sistemi dicrittografia odierni sono detti a chiave pubblica: ogni persona che vuole parlare in mdoo cirfrato possiede due chiavi, una pubblica e una privata.\\
+    Definiamo $E$ l'algoritmo di criptazione, $D$ l'algoritmo di decriptazione e $M$ il messaggio in chiaro da trasmettere. Ci sono quattro algoritmi essenziali per un sistema a chiave pubblica:
+    \begin{itemize}
+      \item Decifrare un messaggio cifrato ritorna il messaggio originale $$D(E(M))=M$$
+      \item Anche il procedimento opposto deve ritornare il messaggio $M$ $$E(D(M))=M$$
+      \item Sia E che D devono essere sufficientemente facili da calcolare
+      \item La chiave pubblica non deve compromettere la segretezza della chiave privata
+    \end{itemize}
+    \subsection{Algoritmo RSA}
+      In questo specifico sistema utilizza degli algoritmi $E$ e $D$ che si basano sull'aritmetica modulare. Per poterlo utilizzare dobbiamo rappresentare dobbiamo trasformare il messaggio $M$ in forma numerica (ad esempio convertendo le lettere tramite tabella UNICODE). Supponiamo che $M$ sia un numero intero tra $0$ e $n-1$. Se il messaggio è troppo lungo possiamo dividerlo in più parti e criptarle separatamente. Siano $e,d,n$ degli interi positivi e definiamo la coppia $(e,n)$ come chiave pubblica e $(d,n)$ la chiave privata. Scegliamo $n$ in modo che $n=pq$ con $p,q$ numeri primi di circa 100 cifre.
+      Ora per criptare il messaggio sarà sufficiente elevare $M$ alla $e$ modulo $n$, ottenendo il messaggio cifrato $C$. Per decritpare il messaggio bata elevare $C$ alla $d$ modulo $n$, ottenendo di nuovo $M$.Formalmente, otteniamo le seguenti definizione per $E$ e $D$:
+      \begin{equation}
+      C\equiv E(M) \equiv M^e \mod{n}
+    \end{equation}
+      $$M \equiv D(C) \equiv C^d \mod{n}$$
 
 \end{document}
