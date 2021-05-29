@@ -11,20 +11,21 @@
 \usepackage{csquotes}
 \usepackage{ulem}
 \usepackage{mathtools}
+\usepackage{enumitem}
 
 \title{Crittografia classica e quantistica}
 \author{Alessandro Minisini}
 \affil{Liceo Scientifico Niccolò Copernico}
 \date{}
+\newtheorem*{defn}{Definizione}
 
 \begin{document}
   \maketitle
   \section{La crittografia: definizione e cenni storici}
     La crittografia è l'arte di creare dei messaggi nascosti, ovvero messaggi che nono impossibili da leggere per una persona non autorizzata a conoscerne il contenuto.\\
     Inizialmente la crittografia aveva poco a che fare con quella che utilizziamo al giorno d'oggi, infatti non si basava su algoritmi basati su dimostrazioni matematiche, ma su semplici escamotage per nascondere il messaggio addosso al corriere.\\
-    \sout{
     I primi esempi li possiamo trovare nella Grecia antica: Plutarco ci parla della cosiddetta scitale spartana. Quest'ultima consisteva nell'arrotolare una cintura di cuoio attorno ad un bastone di diametro fissato e, a questo punto, trascrivere il messaggio partendo da un'estremità del bastone all'altra, parallelamente all'asse. Infine si svolggeva il cuoio e si trasmetteva al destinatario. Per poter leggere il messaggio era necessario utilizzare un bastone con lo stesso diametro, altrimenti riavvolgendo il messaggio le lettere non sarebbero state allineate. Un'altra tecnica e quella steganografica. Un esempio celebre è quello utilizzato da Mileto: si rasava la testa di un uomo e vi si scriveva sopra il messaggio e, quando i capelli erano ricresciuti, si mandava l'uomo a consegnare il messaggio.
-    Ovviamente queste tecniche, soprattutto la seconda, erano concentrate sul nascondere il messaggio, piuttosto che renderlo illeggibile agli occhi di un esterno.}\\
+    Ovviamente queste tecniche, soprattutto la seconda, erano concentrate sul nascondere il messaggio, piuttosto che renderlo illeggibile agli occhi di un esterno.\\
     Il primo cifrario considerato tale è il cosiddetto "Cifrario di Cesare", utilizzato in ambito militare per comunicare con i vari comandanti sparsi per il mediterraneo.
     Inizialmente Cesare, come scrive lui stesso nel "De bello gallico", decise di cambiare le lettere dell'alfabeto latino con quelle greche:
     \newpage
@@ -57,17 +58,55 @@
   \section{Crittografia a chiave pubblica}
     I sistemi dicrittografia odierni sono detti a chiave pubblica: ogni persona che vuole parlare in mdoo cirfrato possiede due chiavi, una pubblica e una privata.\\
     Definiamo $E$ l'algoritmo di criptazione, $D$ l'algoritmo di decriptazione e $M$ il messaggio in chiaro da trasmettere. Ci sono quattro algoritmi essenziali per un sistema a chiave pubblica:
-    \begin{itemize}
+    \begin{enumerate}[label=(\alph*)]
       \item Decifrare un messaggio cifrato ritorna il messaggio originale $$D(E(M))=M$$
       \item Anche il procedimento opposto deve ritornare il messaggio $M$ $$E(D(M))=M$$
       \item Sia E che D devono essere sufficientemente facili da calcolare
       \item La chiave pubblica non deve compromettere la segretezza della chiave privata
-    \end{itemize}
+    \end{enumerate}
     \subsection{Algoritmo RSA}
-      In questo specifico sistema utilizza degli algoritmi $E$ e $D$ che si basano sull'aritmetica modulare. Per poterlo utilizzare dobbiamo rappresentare dobbiamo trasformare il messaggio $M$ in forma numerica (ad esempio convertendo le lettere tramite tabella UNICODE). Supponiamo che $M$ sia un numero intero tra $0$ e $n-1$. Se il messaggio è troppo lungo possiamo dividerlo in più parti e criptarle separatamente. Siano $e,d,n$ degli interi positivi e definiamo la coppia $(e,n)$ come chiave pubblica e $(d,n)$ la chiave privata. Scegliamo $n$ in modo che $n=pq$ con $p,q$ numeri primi di circa 100 cifre.
+      In questo specifico sistema utilizza degli algoritmi $E$ e $D$ che si basano sull'aritmetica modulare. Per poterlo utilizzare dobbiamo rappresentare dobbiamo trasformare il messaggio $M$ in forma numerica (ad esempio convertendo le lettere tramite tabella UNICODE). Supponiamo che $M$ sia un numero intero tra $0$ e $n-1$. Se il messaggio è troppo lungo possiamo dividerlo in più parti e criptarle separatamente. Siano $e,d,n$ degli interi positivi e definiamo la coppia $(e,n)$ come chiave pubblica e $(d,n)$ la chiave privata.
       Ora per criptare il messaggio sarà sufficiente elevare $M$ alla $e$ modulo $n$, ottenendo il messaggio cifrato $C$. Per decritpare il messaggio bata elevare $C$ alla $d$ modulo $n$, ottenendo di nuovo $M$.Formalmente, otteniamo le seguenti definizione per $E$ e $D$:
       \begin{equation}
-      C\equiv E(M) \equiv M^e \mod{n}
-    \end{equation}
+        C\equiv E(M) \equiv M^e \mod{n}
+     \end{equation}
+      $$M \equiv D(C) \equiv C^d \mod{n}$$
+      Ora ci concentriamo sul meodo da seguire per creare le due chiavi (privata e pubblica). Prima di tutto scegliamo due numeri primi $p$, $q$ sufficientemente grandi e li moltiplichiamo per ottenere $n=pq$. Anche se $n$ fa parte della chiave pubblica, la segretezza di $p$ e $q$ è garantita dal fatto che ricavarli da $n$ è un'operazione computazionalmente complessa, impraticabile con i metodi odierni.\\
+      Ora rimangono da generare $e$ è $d$. Scegliamo un $d$ sufficientemente grande in modo che sia coprimo con $\varphi(n)$.
+      \begin{defn}[Funzione $\varphi$ di Eulero]
+        La funzione $\varphi$ di Eulero, detta anche toziente, è una funzione definita, per ogni intero $n$, come il numero di interi compresi tra $1$ ed $n$ che sono coprimi con $n$.\\ Una delle proprietà fondamentali della funzione è la seguente:
+        \begin{equation}
+          \varphi(ab)=\varphi(a)\cdot \varphi(b) \label{phii}
+        \end{equation}
+        Notare inoltre che per ogni primo $p$, $\varphi(p)=p-1$.
+      \end{defn}
+      Per concludere, troviamo $e$ utilizzando i valori $d$, $p$ e $q$, in modo che $e$ sia l'inverso moltiplicativo di $d$ modulo $\varphi(n)$. Ciò significa soddisfare la seguente congruenza
+      $$e\cdot d \equiv 1 \mod{\varphi(n)}$$
+      ovvero
+      $$e\cdot d = k\cdot \varphi(n) +1$$
+      per un $k\in\mathbb{Z}$.
+      Dalla \eqref{phii}, otteniamo facilmente $\varphi(n)$
+      \begin{align*}
+        \varphi(n) &= \varphi(p)\cdot\varphi(q)\\
+        &= (p-1)(q-1)\\
+        &= n-(p+q)+1\\
+      \end{align*}
+      Per l'aritmetica modulare, l'inverso moltiplicativo di $a$ modulo $m$ esiste se e solo se $a$ ed $m$ sono coprimi. Siccome $d$ e $\varphi(n)$ sono coprimi per ipotesi, allora esiste sicuramente un $e$ tale che sia l'inverso moltiplicaitivo di $d$ e che $1\leq e \leq \varphi(n)$.\\
+      A questo punto, dobbiamo verificare che l'algoritmo descritto con le chiavi appena generate soddisfi le condizioni imposte inzialmente.\\
+      Innanzitutto notiamo che le condizioni (a) e (b) implicano la stessa condizione, infatti:
+      $$D(E(M))\equiv (E(M))^d\equiv (M^e)^d \mod{n}=M^{e\cdot d} \mod{n}$$
+      $$E(D(M))\equiv (D(M))^e\equiv (M^d)^e \mod{n}=M^{e\cdot d} \mod{n}$$
+
+      Siccome $e\cdot d=k\cdot \varphi(n)+1$, possiamo sostituire l'espressione nelle equazioni precedenti, ottenendo:
+      $$M^{e\cdot d}\equiv M^{k\cdot \varphi(n)+1} \mod{n}$$.
+      Affinché l'algoritmo funzioni, vogliamo che questa espressione valga esattamente $M$. Per provarlo, ricordiamo un'altra propietà della funzione di Eulero: per ogni intero $M$ coprimo con $n$, vale che
+      $$M^{\varphi(n)}\equiv 1 \mod{n}$$
+      Siccome abbiamo definito $0\leq M \leq n$, sappiamo che $M$ \textit{non} è coprimo con $n$ se e solo se $M$ vale $p$ o $q$. Di questi due casi ce ne occupiamo in seguito.
+      Per tutti gli altri valori possibili, vale che:
+      $$M^{e\cdot d}\equiv M^{k\cdot \varphi(n)+1}\equiv \left(M^{\varphi(n)}\right)^k\cdot M \equiv 1^k\cdot M \mod{n}=M$$
+
+      Tale equazione dimostra la validità del sistema di criptazione RSA.
+
+
 
 \end{document}
