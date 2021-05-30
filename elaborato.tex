@@ -12,6 +12,7 @@
 \usepackage{ulem}
 \usepackage{mathtools}
 \usepackage{enumitem}
+\usepackage{multirow}
 
 \title{Crittografia classica e quantistica}
 \author{Alessandro Minisini}
@@ -144,8 +145,72 @@
   \section{La crittografia quantistica}
     \subsection{Protocollo BB84}
     Il protocollo che verrà descritto in seguito è il cosiddetto BB84, sviluppato da Charles H. Bennet e Gilles Brassard nel 1984.
-    È stato il primo metodo di crittografia quantistica mai inventato ed è utilizzabile come metodo per comunicare in modo privato una chiave segreta tra due utenti per poi utilizzare un protocollo del tipo OTP, descritto in precedenza.
+    È stato il primo metodo di crittografia quantistica mai inventato ed è utilizzabile come metodo per comunicare in modo privato una chiave segreta tra due utenti per poi utilizzare un protocollo del tipo OTP, descritto in precedenza.\\
+    Ipotizziamo che Alice e Bob vogliano comunicare in maniera cifrata e che utilizzino il protocollo BB84 per trasferire la chiave di criptazione. Ognuno dei bit (unità dell'informazione) che compongono la chiave è rappresentato da un fotone polarizzato come nella tabella seguente:
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c| }
+    \hline
+    R & D & Bit \\
+    \hline
+    $\leftrightarrow$ & $\nearrow$ & 1 \\
+    $\updownarrow$ & $\searrow$ & 0 \\
+    \hline
+    \end{tabular}
+    \end{center}
+    Supponiamo poi che ogni impulso contenga un solo fotone.
+    Il protocollo è il seguente:
+    \begin{enumerate}
+      \item Alice sceglie una sequenza casuale di bit ed una sequenza casuale di basi di polarizzazione (rettilinea o diagonale) e manda a Bob una sequenza di fotoni, ognuno rappresentante un bit della stringa, nella base scelta.
+      \item Bob sceglie casualmente per ogni fotone mandatogli da Alice (e indipendentemente dalle scelte fatte da Alice) se misurare la polarizzazione rettilinea o diagonale e interpreta ogni risultato come 0 o 1, a seconda dell'esito della corrispondente misura. Bob ottiene quindi dati significativi solo dal 50\% dei fotoni che ha misurato (quelli per i quali ha indovinato la  corretta base di polarizzazione) supponendo che non vi siano state alterazioni dovute ad origliamento.
+      Notare che ogni misura fatta da Bob altera lo stato del fotone, rendendo impossibile ricostruire il suo stato iniziale.
+      \item Bob annuncia pubblicamente le basi con cui ha analizzato i fotoni.
+      \item Alice comunica pubblicamente a Bob se per ciascun fotone che egli ha ricevuto ha eseguito il tipo giusto di misurazione. Si scartano tutte le posizioni dei bit per le quali Bob ha eseguito un tipo di misurazione sbagliato o per le quali non è stato rilevato alcun fotone (Ciò può capitare per svariate ragioni, dovute sia ad un eventuale origliatore che all'errore degli strumenti di misura).
+      \item Alice e Bob, per verificare se le loro risultanti stringhe di bit sono identiche, confrontano pubblicamente un sottoinsieme casuale dei bit correttamente ricevuti da Bob, cioè con la base esatta. Se tutti i fotoni (o quasi) concordano, Alice e Bob possono concludere che la trasmissione quantistica è stata libera da significativi origliamenti, per cui i rimanenti bit segreti possono costituire la chiave. Se invece vi è stato un notevole origliamento, la trasmissione è scartata e si riprova con un nuovo gruppo di fotoni.
+    \end{enumerate}
+    In seguito è riportato un esempio di trasmissione della chiave quantistica da parte dei due interlocutori.
+    \begin{center}
+    \begin{tabular}{| c | c c c c c c c c c c c c c c c |}
+      \hline
+     1a.& 0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 1\\
+     1b.&D & R & D & R & R & R & R & R  & D & D & R & D & D & D & R\\
+     1c. & $\nearrow$ & $\updownarrow$&$\searrow$ &$\leftrightarrow$ & $\updownarrow$& $\updownarrow$& $\leftrightarrow$&$\leftrightarrow$ & $\searrow$& $\nearrow$&$\updownarrow$&$\searrow$&$\nearrow$ & $\nearrow$ & $\updownarrow$ \\
+     2a. & R&D&D&R&R&D&D&R&D&R&D&D&D&D&R\\
+     2b. &1& &1& &1&0&0&0&&1&1&1&&1&0\\
+     3. & R&&D&&R&D&D&R&&R&D&D&&D&R\\
+     4a. &&&OK&&OK&&&OK&&&&OK&&OK&OK\\
+     4b. &&&1&&1&&&0&&&&1&&0&1\\
+     5a.&&&&&1&&&&&&&&&0&\\
+     5b.&&&&&OK&&&&&&&&&OK&\\
+     5c. &&&1&&&&&0&&&&1&&&1\\
+      \hline
+     \end{tabular}
+    \end{center}
 
+    \begin{center}
+    \begin{tabular}{|c | c|}
+      \hline
+      \multicolumn{2}{|c|}{\textit{Trasmissione quantistica} }\\
+      \hline
+      1a.& Bit scelti da Alice\\
+      1b.&Basi scelte da Alice\\
+      1c. & Fotoni polarizzati spediti sul canale quantistico\\
+      2a.& Basi scelte da Bob per misurare i fotoni\\
+      2b.&Bit ricevuti da Bob\\
+      \hline
+      \multicolumn{2}{|c|}{\textit{Discussione pubblica}}\\
+      \hline
+      3. & Bob dichiara le basi che ha utilizzato\\
+      4a.  & Alice dice a Bob quali basi erano corrette \\
+      4b. & Bit validi per la chiave di criptazione\\
+      5a. &Bob rivela alcuni bit della chiave ottenuta\\
+      5b. & Alice conferma i bit inviati, verificando la validità della chiave\\
+      \hline
+      \multicolumn{2}{|c|}{\textit{Risultato}}\\
+      \hline
+      5c.& Bit rimanenti utilizzati nella chiave\\
+      \hline
+    \end{tabular}
+    \end{center}
 
 
 
