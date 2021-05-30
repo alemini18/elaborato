@@ -21,14 +21,15 @@
 
 \begin{document}
   \maketitle
-  \section{La crittografia: definizione e cenni storici}
+  \tableofcontents
+  \section{Introduzione e cenni storici}
     La crittografia è l'arte di creare dei messaggi nascosti, ovvero messaggi che nono impossibili da leggere per una persona non autorizzata a conoscerne il contenuto.\\
     Inizialmente la crittografia aveva poco a che fare con quella che utilizziamo al giorno d'oggi, infatti non si basava su algoritmi basati su dimostrazioni matematiche, ma su semplici escamotage per nascondere il messaggio addosso al corriere.\\
     I primi esempi li possiamo trovare nella Grecia antica: Plutarco ci parla della cosiddetta scitale spartana. Quest'ultima consisteva nell'arrotolare una cintura di cuoio attorno ad un bastone di diametro fissato e, a questo punto, trascrivere il messaggio partendo da un'estremità del bastone all'altra, parallelamente all'asse. Infine si svolggeva il cuoio e si trasmetteva al destinatario. Per poter leggere il messaggio era necessario utilizzare un bastone con lo stesso diametro, altrimenti riavvolgendo il messaggio le lettere non sarebbero state allineate. Un'altra tecnica e quella steganografica. Un esempio celebre è quello utilizzato da Mileto: si rasava la testa di un uomo e vi si scriveva sopra il messaggio e, quando i capelli erano ricresciuti, si mandava l'uomo a consegnare il messaggio.
     Ovviamente queste tecniche, soprattutto la seconda, erano concentrate sul nascondere il messaggio, piuttosto che renderlo illeggibile agli occhi di un esterno.\\
+    \section{Crittografia a chiave privata: Cifrario di Cesare}
     Il primo cifrario considerato tale è il cosiddetto "Cifrario di Cesare", utilizzato in ambito militare per comunicare con i vari comandanti sparsi per il mediterraneo.
     Inizialmente Cesare, come scrive lui stesso nel "De bello gallico", decise di cambiare le lettere dell'alfabeto latino con quelle greche:
-    \newpage
     \begin{displayquote}[De Bello Gallico V, 48.2-4]
       \textit{ibi ex captivis cognoscit, quae apud Ciceronem gerantur quantoque in periculo res sit.
       Tum cuidam ex equitibus Gallis magnis preamiis persuadet, uti Ciceronem epistulam deferat.
@@ -137,6 +138,14 @@
       $$M^{e\cdot d}\equiv M \mod{n}$$
       Che è proprio ciò che volevamo verificare.\\
       La dimostrazone quindi garantisce la validità del sistema di criptazione RSA per ogni $M$.
+
+      \subsection{Sicurezza del sistema RSA}
+  \section{L'avvento dei computer quantistici}
+  \section{La crittografia quantistica}
+    \subsection{Protocollo BB84}
+    Il protocollo che verrà descritto in seguito è il cosiddetto BB84, sviluppato da Charles H. Bennet e Gilles Brassard nel 1984.
+    È stato il primo metodo di crittografia quantistica mai inventato ed è utilizzabile come metodo per comunicare in modo privato una chiave segreta tra due utenti per poi utilizzare un protocollo del tipo OTP, descritto in precedenza.
+
 
 
 
