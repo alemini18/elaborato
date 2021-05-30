@@ -13,6 +13,7 @@
 \usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{multirow}
+\usepackage{siunitx}
 
 \title{Crittografia classica e quantistica}
 \author{Alessandro Minisini}
@@ -146,6 +147,25 @@
     \subsection{Protocollo BB84}
     Il protocollo che verrà descritto in seguito è il cosiddetto BB84, sviluppato da Charles H. Bennet e Gilles Brassard nel 1984.
     È stato il primo metodo di crittografia quantistica mai inventato ed è utilizzabile come metodo per comunicare in modo privato una chiave segreta tra due utenti per poi utilizzare un protocollo del tipo OTP, descritto in precedenza.\\
+    \subsection{Principi fisici che garantiscono il funzionamento del BB84}
+    Per sfruttare questo sistema si utilizza la luce. Per la meccanica quantistica la luce è composta da quantità discrete di energia, chiamate fotoni. Ogni fotone possiede anche un carattere ondulatorio che gli conferisce un proprio angolo di polarizzazione, definito come l'angolo tra il piano in cui essi oscillano e il piano di propagazione degli stessi fotoni.\\
+    Normalmente una sorgente di luce produce fotoni a polarizzazione arbitraria. Per far assumere una particolare polarizzazione ad un fotone si utilizza un filtro polarizzatore, che permette solo ai fotoni con una determinata polarizzazione di proseguire il loro cammino. Ogni polarizzatore ha un angolo ben preciso di polarizzazione che chiameremo $\theta$.
+    Ruotando opportunamente il filtro polarizzatore in modo che permetta il passaggio solo di fotoni con polarizzazione $\theta$, allora tutti i fotoni con polarizzazione diversa da $\theta$ vengono fermati, oppure oltrepassano il filtro con una polarizzazione $\theta$.
+    Le leggi della meccanica quantistica ci dicono che un fotone inizialmente polarizzato con un angolo $\phi$ oltrepassa il filtro con la seguente probabilità:
+    $$p_{\theta}(\phi)=\cos^2(\phi-\theta)$$
+    La probabilità che venga respinto invece è naturalmente:
+    $$1-p_{\theta}(\phi)=\sin^2(\phi-\theta)$$
+    Per semplicità, supponiamo di utilizzare raggi luminosi che contengono un singolo fotone polarizzato.
+    Per i nostri scopi, utilizzeremo solo quattro angoli di polarizzazione: $\ang{0}$,$\ang{45}$,$\ang{45}$,$\ang{135}$.\\
+    I fotoni verranno trasmessi da un capo all'altro della comunicazione tramite fibra ottica, mentre per misurare la polarizzazione del fotone si utilizza un cristallo di calcite. Quando il fotone attraversa il cristallo infatti, possono accadere due cose:
+    \begin{itemize}
+      \item il fotone lo attraversa in linea retta ed emerge polarizzato perpendicolarmente rispetto all'asse ottico del cristallo
+      \item il fotone viene traslato ed emerge polarizzato parallelamente rispetto all'asse ottico.
+    \end{itemize}
+    Se il fotone è inizialmente polarizzato ortogonalmente rispetto all'asse ottico allora il suo stato non subirà modifiche. Se invece non è così, il fotone seguirà uno dei due cammini con eguale probabilità, subendo un'opportuna ripolarizzazione. Un comportamento del tutto casuale si ha quando la polarizzazione è a metà fra le due direzioni, quindi forma un angolo di $\ang{45}$ o $\ang{135}$ col piano ottico del cristallo: in tal modo ogni informazione sullo stato iniziale viene completamente persa.
+    Per questo motivo, nel protocollo BB84 vengono utilizzati gli angoli precedentemente indicati: se per le misure ortogonali non è necessario apportare modifiche al cristallo, per le misure diagonali è sufficiente ruotare il cristallo originale di $\ang{45}$.
+
+    \subsection{Procedimento operativo}
     Ipotizziamo che Alice e Bob vogliano comunicare in maniera cifrata e che utilizzino il protocollo BB84 per trasferire la chiave di criptazione. Ognuno dei bit (unità dell'informazione) che compongono la chiave è rappresentato da un fotone polarizzato come nella tabella seguente:
     \begin{center}
     \begin{tabular}{ |c|c|c|c| }
@@ -211,6 +231,8 @@
       \hline
     \end{tabular}
     \end{center}
+    \subsection{La meccanica quantistica ci fornisce il certificato di sicurezza}
+
 
 
 
