@@ -27,8 +27,8 @@
   \tableofcontents
   \newpage
   \section{Introduzione}
-  La crittografia è l'arte di creare "scritture nascoste", ovvero trovare dei metodi per mascherare dei messaggi in modo che non possano essere compresi da persone non autorizzate a leggerlo. La crittografia è da sempre usata in ambito militare, diplomatico bancario e commerciale per garantire la giusta riservatezza alle comunicazioni tra le varie parti. I primi sistemi di crittografia, che prendono il nome di tecniche seganografiche, li possiamo ritrovare nell'antica Grecia: venivano utilizzate delle aste di legno per codificare messaggi su cinture di cuoio, oppure si tendeva a nasconedere il messaggio sotto ai capelli di chi faceva da corriere.
-  Col tempo le varie tecniche si sono evolute: vengono creati dei cifrari a \textit{chiave privata}(la chiave per la cifratura permette di deifrare il messaggio), come il cifrario di Cesare descritto in questo elaborato.
+  La crittografia è l'arte di creare "scritture nascoste", ovvero trovare dei metodi per mascherare dei messaggi in modo che non possano essere compresi da persone non autorizzate a leggerlo. La crittografia è da sempre usata in ambito militare, diplomatico bancario e commerciale per garantire la giusta riservatezza alle comunicazioni tra le varie parti. I primi sistemi di crittografia, che prendono il nome di tecniche steganografiche, li possiamo ritrovare nell'antica Grecia: venivano utilizzate delle aste di legno per codificare messaggi su cinture di cuoio, oppure si tendeva a nascondere il messaggio sotto ai capelli di chi faceva da corriere.
+  Col tempo le varie tecniche si sono evolute: vengono creati dei cifrari a \textit{chiave privata}(la chiave per la cifratura permette di decifrare il messaggio), come il cifrario di Cesare descritto in questo elaborato.
   Il grosso problema di questi sistemi è la distribuzione della chiave, che necessita un canale sicuro tra i due interlocutori, non sempre realizzabile.
   Per ovviare al problema, sono stati inventati dei metodi a \textit{chiave pubblica}(la conoscenza della chiave di cifratura non permette la decifrazione) che fanno leva sulle nostre limitate capacità computazionali: uno di questi è l'algoritmo RSA, inventato da Whitfield Diffie e Martin Hellman nel 1976.
   Con la teorizzazione e la creazione dei primi computer quantistici, è sorta la necessità di trovare nuovi sistemi che non possano essere aggirati: nasce quindi negli anni ottanta la \textit{crittografia quantistica}.
@@ -42,7 +42,7 @@
       Hanc Graecis conscriptam litteris mittit, ne intecepta epistula nostra ab hostibus consilia cognoscantur.}
     \end{displayquote}
     Ai tempi di Cesare, questo sistema poteva essere considerato sicuro, poiché lo studio del greco era riservato solo alla classe dirigente romana che poteva permettersi un precettore privato e viaggi di studio in Grecia.\\
-    Questo non è l’unico caso accertato di uso di cifrari a trsposizione da parte di Cesare; si sa, infatti, che Cesare ricorreva spessissimo a cifrari per trasposizione, anche per comunicare coi parenti. Sappiamo, in proposito che la cifratura era talmente tanto spesso utilizzata da Cesare, che Valerio Probo dedicò ai suoi cifrari un intero trattato, che purtroppo è andato perduto. Ma ci sono altre testimonianze, come quelle di Svetonio. Si legge infatti nelle “Vite dei Cesari“:
+    Questo non è l’unico caso accertato di uso di cifrari a trasposizione da parte di Cesare; si sa, infatti, che Cesare ricorreva spessissimo a cifrari per trasposizione, anche per comunicare coi parenti. Sappiamo, in proposito che la cifratura era talmente tanto spesso utilizzata da Cesare, che Valerio Probo dedicò ai suoi cifrari un intero trattato, che purtroppo è andato perduto. Ma ci sono altre testimonianze, come quelle di Svetonio. Si legge infatti nelle “Vite dei Cesari“:
     \begin{displayquote}[Vita di Cesare, 56]
       \textit{Extant et ad Ciceronem, item ad familiares domesticis de rebus, in quibus, si qua occultius perferenda erant, per notas scripsit, id est sic structo litterarum ordine, ut nullum verbum effici posset: quae si qui investigare et persequi velit, quartam elementorum litteram, id est D pro A et perinde reliquas commutet.\\}
     \end{displayquote}
@@ -58,10 +58,10 @@
     \end{align*}
     Dunque
     $$f^{-1}(x)\equiv x-y \mod{m}$$
-    Questi tipi di cifratura sono ormai considerati obsoleti, pocihé la potenza di calcolo di un computer permette di provare ogni singola combinazione di lettere in un tempo irrisorio.\\
+    Questi tipi di cifratura sono ormai considerati obsoleti, poiché la potenza di calcolo di un computer permette di provare ogni singola combinazione di lettere in un tempo irrisorio.\\
     In realtà, questo tipo di cifratura è stato superato già nel Medioevo. \\ Un matematico arabo chiamato al-Kindi (IX secolo d.C.) elaborò un metodo di decrittazione basato sull'analisi delle frequenze: le lettere più frequenti nel messaggio devono corrispondere con le lettere più usate dalla lingua del messaggio originale. Questo fatto permette di ridurre drasticamente il numero di tentativi necessari, permettendo di decrittare il messaggio anche a mano.\\\\
     Il cifrario di Cesare però costituisce la base di molti altri cifrari conosciuti, come il cifrario di Vigenère, sviluppato nel 1586 dall'omonimo diplomatico francese.
-    Questo cifrario introdusse per la prima volta il concetto di \textit{chiave di criptazione}: per poter criptare e decriptare un messagio infatti era necessario essere a conoscienza di una sequenza di caratteri chiamata verme.\\\\
+    Questo cifrario introdusse per la prima volta il concetto di \textit{chiave di criptazione}: per poter criptare e decriptare un messaggio infatti era necessario essere a conoscenza di una sequenza di caratteri chiamata verme.\\\\
     L'evoluzione di questi sistemi ha portato alla nascita dell'unico sistema crittografico \textit{perfetto}, poiché la sua inviolabilità è stata comprovata da una dimostrazione matematica.\\
     Questo cifrario è noto col nome \textit{One Time Pad}, ed il suo funzionamento è molto semplice.\\
     Per prima cosa ci serve il messaggio $M$,  trasformato in forma numerica, e una chiave $K$ tale che il numero di cifre di $M$ sia minore uguale al numero di cifre di $K$.\\
@@ -91,8 +91,8 @@
     E' importante citare questo cifrario perché verrà poi utilizzato in combinazione con la distribuzione della chiave quantistica.\\
     \newpage
   \section{Crittografia a chiave pubblica}
-    I sistemi dicrittografia odierni sono detti a chiave pubblica: ogni persona che vuole parlare in mdoo cirfrato possiede due chiavi, una pubblica e una privata.\\
-    Definiamo $E$ l'algoritmo di criptazione, $D$ l'algoritmo di decriptazione e $M$ il messaggio in chiaro da trasmettere. Ci sono quattro algoritmi essenziali per un sistema a chiave pubblica:
+    I sistemi di crittografia odierni sono detti a chiave pubblica: ogni persona che vuole parlare in modo cifrato possiede due chiavi, una pubblica e una privata.\\
+    Definiamo $E$ l'algoritmo di criptazione, $D$ l'algoritmo di decrittazione e $M$ il messaggio in chiaro da trasmettere. Ci sono quattro algoritmi essenziali per un sistema a chiave pubblica:
     \begin{enumerate}[label=(\alph*)]
       \item Decifrare un messaggio cifrato ritorna il messaggio originale $$D(E(M))=M$$
       \item Anche il procedimento opposto deve ritornare il messaggio $M$ $$E(D(M))=M$$
@@ -101,12 +101,12 @@
     \end{enumerate}
     \subsection{Algoritmo RSA}
       In questo specifico sistema utilizza degli algoritmi $E$ e $D$ che si basano sull'aritmetica modulare. Per poterlo utilizzare dobbiamo rappresentare dobbiamo trasformare il messaggio $M$ in forma numerica (ad esempio convertendo le lettere tramite tabella UNICODE). Supponiamo che $M$ sia un numero intero tra $0$ e $n-1$. Se il messaggio è troppo lungo possiamo dividerlo in più parti e criptarle separatamente. Siano $e,d,n$ degli interi positivi e definiamo la coppia $(e,n)$ come chiave pubblica e $(d,n)$ la chiave privata.
-      Ora per criptare il messaggio sarà sufficiente elevare $M$ alla $e$ modulo $n$, ottenendo il messaggio cifrato $C$. Per decritpare il messaggio bata elevare $C$ alla $d$ modulo $n$, ottenendo di nuovo $M$.Formalmente, otteniamo le seguenti definizione per $E$ e $D$:
+      Ora per criptare il messaggio sarà sufficiente elevare $M$ alla $e$ modulo $n$, ottenendo il messaggio cifrato $C$. Per decrittare il messaggio basta elevare $C$ alla $d$ modulo $n$, ottenendo di nuovo $M$.Formalmente, otteniamo le seguenti definizione per $E$ e $D$:
       \begin{equation}
         C\equiv E(M) \equiv M^e \mod{n}
      \end{equation}
       $$M \equiv D(C) \equiv C^d \mod{n}$$
-      Ora ci concentriamo sul meodo da seguire per creare le due chiavi (privata e pubblica). Prima di tutto scegliamo due numeri primi $p$, $q$ sufficientemente grandi e li moltiplichiamo per ottenere $n=pq$. Anche se $n$ fa parte della chiave pubblica, la segretezza di $p$ e $q$ è garantita dal fatto che ricavarli da $n$ è un'operazione computazionalmente complessa, impraticabile con i metodi odierni.\\
+      Ora ci concentriamo sul metodo da seguire per creare le due chiavi (privata e pubblica). Prima di tutto scegliamo due numeri primi $p$, $q$ sufficientemente grandi e li moltiplichiamo per ottenere $n=pq$. Anche se $n$ fa parte della chiave pubblica, la segretezza di $p$ e $q$ è garantita dal fatto che ricavarli da $n$ è un'operazione computazionalmente complessa, impraticabile con i metodi odierni.\\
       Ora rimangono da generare $e$ è $d$. Scegliamo un $d$ sufficientemente grande in modo che sia coprimo con $\varphi(n)$.
       \begin{defn}[Funzione $\varphi$ di Eulero]
         La funzione $\varphi$ di Eulero, detta anche toziente, è una funzione definita, per ogni intero $n$, come il numero di interi compresi tra $1$ ed $n$ che sono coprimi con $n$.\\ Una delle proprietà fondamentali della funzione è la seguente:
@@ -126,8 +126,8 @@
         &= (p-1)(q-1)\\
         &= n-(p+q)+1\\
       \end{align*}
-      Per l'aritmetica modulare, l'inverso moltiplicativo di $a$ modulo $m$ esiste se e solo se $a$ ed $m$ sono coprimi. Siccome $d$ e $\varphi(n)$ sono coprimi per ipotesi, allora esiste sicuramente un $e$ tale che sia l'inverso moltiplicaitivo di $d$ e che $1\leq e \leq \varphi(n)$.\\
-      A questo punto, dobbiamo verificare che l'algoritmo descritto con le chiavi appena generate soddisfi le condizioni imposte inzialmente.\\
+      Per l'aritmetica modulare, l'inverso moltiplicativo di $a$ modulo $m$ esiste se e solo se $a$ ed $m$ sono coprimi. Siccome $d$ e $\varphi(n)$ sono coprimi per ipotesi, allora esiste sicuramente un $e$ tale che sia l'inverso moltiplicativo di $d$ e che $1\leq e \leq \varphi(n)$.\\
+      A questo punto, dobbiamo verificare che l'algoritmo descritto con le chiavi appena generate soddisfi le condizioni imposte inizialmente.\\
       Innanzitutto notiamo che le condizioni (a) e (b) implicano la stessa condizione, infatti:
       \begin{equation}
         D(E(M))\equiv (E(M))^d\equiv (M^e)^d \mod{n}=M^{e\cdot d} \mod{n} \label{finale}
@@ -136,7 +136,7 @@
 
       Siccome $e\cdot d=k\cdot \varphi(n)+1$, possiamo sostituire l'espressione nelle equazioni precedenti, ottenendo:
       $$M^{e\cdot d}\equiv M^{k\cdot \varphi(n)+1} \mod{n}$$.
-      Affinché l'algoritmo funzioni, vogliamo che questa espressione valga esattamente $M$. Per provarlo, ricordiamo un'altra propietà della funzione di Eulero: per ogni intero $M$ coprimo con $n$, vale che
+      Affinché l'algoritmo funzioni, vogliamo che questa espressione valga esattamente $M$. Per provarlo, ricordiamo un'altra proprietà della funzione di Eulero: per ogni intero $M$ coprimo con $n$, vale che
       $$M^{\varphi(n)}\equiv 1 \mod{n}$$
       Siccome abbiamo definito $0\leq M \leq n$, sappiamo che $M$ \textit{non} è coprimo con $n$ se e solo se $p\mid M$ o $q\mid M$. Di questi due casi ce ne occupiamo in seguito.
       Per tutti gli altri casi possibili, vale che:
@@ -160,7 +160,7 @@
           M^{k(q-1)(p-1)}=1+hq \label{fermat1}
       \end{equation}
       per $h\in\mathbb{Z}$.\\
-      Ora moltpilichiamo i due membri della \eqref{fermat1} per $M$, ottenendo:
+      Ora moltiplichiamo i due membri della \eqref{fermat1} per $M$, ottenendo:
       $$M^{1+k(q-1)(p-1)}=M+Mqh$$
       Ora sostituiamo alcune parti dell'equazione con alcuni risultati ottenuti sopra, nello specifico sappiamo che $(q-1)(p-1)=\varphi(n)$ e che $M=pt$. Otteniamo che:
       \begin{align*}
@@ -168,14 +168,14 @@
         M^{1+k\cdot \varphi(n)}&=M+nth\\
         M^{1+k\cdot \varphi(n)}&\equiv M \mod{n}\\
       \end{align*}
-      Sotituiamo $e\cdot d=1+k\cdot \varphi(n)$:
+      Sostituiamo $e\cdot d=1+k\cdot \varphi(n)$:
       $$M^{e\cdot d}\equiv M \mod{n}$$
       Che è proprio ciò che volevamo verificare.\\
-      La dimostrazone quindi garantisce la validità del sistema di criptazione RSA per ogni $M$.
+      La dimostrazione quindi garantisce la validità del sistema di criptazione RSA per ogni $M$.
 
       \subsection{Sicurezza del sistema RSA}
       La sicurezza dell'algoritmo RSA si basa sul fatto che per calcolare $\varphi(n)$ è necessario fattorizzare $n$, siccome $p$ e $q$ non sono noti.
-      Tuttavia, la scomposizione di un numero in fattori primi è un'operazione che richiede molto tempo: tra gli algoritmi più efficienti, qello di Richard Schroeppel fattorizza $n$ in circa $$e^{\sqrt{\ln{n}\cdot\ln{\ln{n}}}}$$
+      Tuttavia, la scomposizione di un numero in fattori primi è un'operazione che richiede molto tempo: tra gli algoritmi più efficienti, quello di Richard Schroeppel fattorizza $n$ in circa $$e^{\sqrt{\ln{n}\cdot\ln{\ln{n}}}}$$
       operazioni. La seguente tabella, stilata dai creatori dell'RSA nel 1978, rappresenta i tempi di calcolo al variare delle cifre di $n$ (assumendo che un'operazione impieghi in media un microsecondo per essere eseguita):
       ~\\
       \begin{center}
@@ -194,15 +194,15 @@
 
       \newpage
   \section{La crittografia quantistica}
-    Abbiamo acpito che un computer tradizionale non è in grado di scomporre numeri grandi, come quelli utilizzati nell'algotimo presentato, in un tempo ragionevole. Questa incapacità viene sfruttata da moltissimi algoritmi di criptazione e questi vengono utilizzati per proteggere i nostri dati più sensibili, come le credenziali bancarie.
-    Nel 1980 il fisico Paul Benioff propone il primo modello di comuter quantistico, basato su dei bit che non sono rappresentati da stati binari (0 e 1), ma da delle particelle subatomiche.
+    Abbiamo capito che un computer tradizionale non è in grado di scomporre numeri grandi, come quelli utilizzati nell'algoritmo presentato, in un tempo ragionevole. Questa incapacità viene sfruttata da moltissimi algoritmi di criptazione e questi vengono utilizzati per proteggere i nostri dati più sensibili, come le credenziali bancarie.
+    Nel 1980 il fisico Paul Benioff propone il primo modello di computer quantistico, basato su dei bit che non sono rappresentati da stati binari (0 e 1), ma da delle particelle subatomiche.
     Queste particelle, a differenza dei bit classici, possono essere forzate in uno stato particolare chiamato \textit{Sovrapposizione Quantistica}, che è in grado di contenere un quantitativo di informazioni enorme.
     Queste informazioni, grazie alle leggi della meccanica quantistica, possono essere processate in un tempo considerevolmente inferiore rispetto ai computer classici.
     Al giorno d'oggi la realizzazione di un computer quantistica è molto complessa (sono necessarie temperature estremamente basse, vicine allo zero assoluto), ma non impossibile: la IBM, la Google e altri centri di ricerca hanno già sviluppato dei computer quantistici che contengono circa 50 qbits (bits quantistici).
-    Per quanto riguarda l'algoritmo di fatttorizzazione, nel 1994 l'informatico Peter Shor ha scritto una procedura che riesce a compiere il calcolo il un tempo irrisorio (nello specifico, il numero di operazioni è dell'ordine di $\log^2{N}\cdot\log{\log{N}}\cdot\log{\log{\log{N}}}$); l'unico problema prettamente pratico di questo algoritmo è che necessita all'incirca un milione di qbits per funzionare.
-    Con le tecnologie attuali, è impossibile realizzare un computer quantistico così potente, garantendo la validità degli algoritmi classici ancora per molti anni. Tuttavia, un calcolatore del genere potrebbe venir costruito in futuro, quindi c'è comunque la necessità di creare dei sistemi crittografici che siano in grado di resistere ai tentativi di attaco da parte di questi computer.
+    Per quanto riguarda l'algoritmo di fattorizzazione, nel 1994 l'informatico Peter Shor ha scritto una procedura che riesce a compiere il calcolo il un tempo irrisorio (nello specifico, il numero di operazioni è dell'ordine di $\log^2{N}\cdot\log{\log{N}}\cdot\log{\log{\log{N}}}$); l'unico problema prettamente pratico di questo algoritmo è che necessita all'incirca un milione di qbits per funzionare.
+    Con le tecnologie attuali, è impossibile realizzare un computer quantistico così potente, garantendo la validità degli algoritmi classici ancora per molti anni. Tuttavia, un calcolatore del genere potrebbe venir costruito in futuro, quindi c'è comunque la necessità di creare dei sistemi crittografici che siano in grado di resistere ai tentativi di attacco da parte di questi computer.
     Questa nuova branca della crittografia è chiamata \textit{Crittografia Quantistica} e si concentra sul trovare un modo per trasmettere una chiave in modo sicuro sfruttando le leggi della meccanica quantistica.
-    I principali algoritmi quantistici sono il BB84, descritto in seguito, che si basa sulla polarizzazione dei fotoni, e l'ERBE, che sfrutta alune proprietà che delle particelle quantistiche "gemelle" possiedono.
+    I principali algoritmi quantistici sono il BB84, descritto in seguito, che si basa sulla polarizzazione dei fotoni, e l'ERBE, che sfrutta alcune proprietà che delle particelle quantistiche "gemelle" possiedono.
     \subsection{Protocollo BB84}
     Il protocollo BB84 è stato sviluppato da Charles H. Bennet e Gilles Brassard nel 1984.
     È stato il primo metodo di crittografia quantistica mai inventato ed è utilizzabile come metodo per comunicare in modo privato una chiave segreta tra due utenti per poi utilizzare un protocollo del tipo OTP, descritto in precedenza.\\
@@ -296,7 +296,7 @@
     \subsection{La meccanica quantistica ci fornisce il certificato di sicurezza}
     Una delle classiche strategie di intercettazione utilizzate è il cosiddetto \textit{Man-in-the-middle}: L'origliatore, tipicamente chiamato Eva, intercetta le comunicazioni e ritrasmette al destinatario ciò che riceve.
     In questo caso, Eva intercetta ogni fotone in una delle due basi e spedisce a Bob un fotone nello stato che ha rilevato:
-    in questo modo le informazioni corrrettamente captate saranno il 50\% di quelle totali.
+    in questo modo le informazioni correttamente captate saranno il 50\% di quelle totali.
     Infatti,dalla \eqref{prob} possiamo ricavare le probabilità che ogni fotone attraversi una base:
     \begin{center}
       \begin{tabular}{|c|c|c|c|c|}
@@ -313,9 +313,9 @@
         \hline
       \end{tabular}
     \end{center}
-    Ad esempio, la probabilià che Eva riesca a captare correttamente un fotone polarizzato a $\ang{90}$ vale:
+    Ad esempio, la probabilità che Eva riesca a captare correttamente un fotone polarizzato a $\ang{90}$ vale:
     $$p(\ang{90})=\frac{p_{\ang{0}}(\ang{90})+p_{\ang{45}}(\ang{90})+p_{\ang{90}}(\ang{90})+p_{\ang{135}}(\ang{90})}{4}=\frac{0+1+0.5+0.5}{4}=0.5$$
-    La probablità che Eva spedisca il bit correttamente a Bob è però diversa da $p(\ang{90})$, perché per il principio di indeterminazione di Heisenberg, la misura comporta il collasso dello stato quantico del fotone: se inzialmente la polarizzazione della particella non è concorde con la base utilizzata, la misura obbliga il fotone ad orientarsi lungo uno dei due assi ortogonali del filtro utilizzato.
+    La probabilità che Eva spedisca il bit correttamente a Bob è però diversa da $p(\ang{90})$, perché per il principio di indeterminazione di Heisenberg, la misura comporta il collasso dello stato quantico del fotone: se inizialmente la polarizzazione della particella non è concorde con la base utilizzata, la misura obbliga il fotone ad orientarsi lungo uno dei due assi ortogonali del filtro utilizzato.
     Di conseguenza, la probabilità che Bob ricevi correttamente il bit di Alice è descritta dalla seguente formula:
     \begin{equation*}
       \frac{\displaystyle\sum_{i\in A}\displaystyle\sum_{j\in A} p_i(\ang{90})\cdot p_j(\ang{90})}{16}=0.25
