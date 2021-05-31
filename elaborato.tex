@@ -26,21 +26,22 @@
   \newpage
   \tableofcontents
   \newpage
-  \section{Introduzione e cenni storici}
-    La crittografia è l'arte di creare dei messaggi nascosti, ovvero messaggi che nono impossibili da leggere per una persona non autorizzata a conoscerne il contenuto.\\
-    Inizialmente la crittografia aveva poco a che fare con quella che utilizziamo al giorno d'oggi, infatti non si basava su algoritmi basati su dimostrazioni matematiche, ma su semplici escamotage per nascondere il messaggio addosso al corriere.\\
-    I primi esempi li possiamo trovare nella Grecia antica: Plutarco ci parla della cosiddetta scitale spartana. Quest'ultima consisteva nell'arrotolare una cintura di cuoio attorno ad un bastone di diametro fissato e, a questo punto, trascrivere il messaggio partendo da un'estremità del bastone all'altra, parallelamente all'asse. Infine si svolggeva il cuoio e si trasmetteva al destinatario. Per poter leggere il messaggio era necessario utilizzare un bastone con lo stesso diametro, altrimenti riavvolgendo il messaggio le lettere non sarebbero state allineate. Un'altra tecnica e quella steganografica. Un esempio celebre è quello utilizzato da Mileto: si rasava la testa di un uomo e vi si scriveva sopra il messaggio e, quando i capelli erano ricresciuti, si mandava l'uomo a consegnare il messaggio.
-    Ovviamente queste tecniche, soprattutto la seconda, erano concentrate sul nascondere il messaggio, piuttosto che renderlo illeggibile agli occhi di un esterno.\\
+  \section{Introduzione}
+  La crittografia è l'arte di creare "scritture nascoste", ovvero trovare dei metodi per mascherare dei messaggi in modo che non possano essere compresi da persone non autorizzate a leggerlo. La crittografia è da sempre usata in ambito militare, diplomatico bancario e commerciale per garantire la giusta riservatezza alle comunicazioni tra le varie parti. I primi sistemi di crittografia li possiamo ritrovare nell'antica Grecia: venivano utilizzate delle aste di legno per codificare messaggi su cinture di cuoio, oppure si tendeva a nasconedere il messaggio sotto ai capelli di chi faceva da corriere.
+  Col tempo le varie tecniche si sono evolute: vengono creati dei cifrari a \textit{chiave privata}(la chiave per la cifratura permette di deifrare il messaggio), come il cifrario di Cesare descritto in questo elaborato.
+  Il grosso problema di questi sistemi è la distribuzione della chiave, che necessita un canale sicuro tra i due interlocutori, non sempre realizzabile.
+  Per ovviare al problema, sono stati inventati dei metodi a \textit{chiave pubblica}(la conoscenza della chiave di cifratura non permette la decifrazione) che fanno leva sulle nostre limitate capacità computazionali: uno di questi è l'algoritmo RSA, inventato da Whitfield Diffie e Martin Hellman nel 1976.
+  Con la teorizzazione e la creazione dei primi computer quantistici, è sorta la necessità di trovare nuovi sistemi che non possano essere aggirati: nasce quindi negli anni ottanta la \textit{crittografia quantistica}.
+
     \section{Crittografia a chiave privata: Cifrario di Cesare}
-    Il primo cifrario considerato tale è il cosiddetto "Cifrario di Cesare", utilizzato in ambito militare per comunicare con i vari comandanti sparsi per il mediterraneo.
-    Inizialmente Cesare, come scrive lui stesso nel "De bello gallico", decise di cambiare le lettere dell'alfabeto latino con quelle greche:
+    Il \textit{Cifrario di Cesare} è uno dei più antichi cifrari di cui si abbia traccia storica: veniva utilizzato dal generale romano in ambito militare (per comunicare con i generali sparsi per l'impero) e in ambito domestico per discutere di questioni che dovevano rimanere private.
+    Inizialmente Cesare, come scrive lui stesso nel "De bello gallico", cifrava i messaggi scambiando le lettere dell'alfabeto latino con quelle greche:
     \begin{displayquote}[De Bello Gallico V, 48.2-4]
       \textit{ibi ex captivis cognoscit, quae apud Ciceronem gerantur quantoque in periculo res sit.
       Tum cuidam ex equitibus Gallis magnis preamiis persuadet, uti Ciceronem epistulam deferat.
       Hanc Graecis conscriptam litteris mittit, ne intecepta epistula nostra ab hostibus consilia cognoscantur.}
     \end{displayquote}
-    Ai tempi di Cesare, questo sistema poteva essere considerato sicuro, poiché lo studio del greco era riservato solo alla classe dirigente romana che poteva permettersi un precettore
-    privato e costosi viaggi di studio in Grecia.\\
+    Ai tempi di Cesare, questo sistema poteva essere considerato sicuro, poiché lo studio del greco era riservato solo alla classe dirigente romana che poteva permettersi un precettore privato e viaggi di studio in Grecia.\\
     Questo non è l’unico caso accertato di uso di cifrari a trsposizione da parte di Cesare; si sa, infatti, che Cesare ricorreva spessissimo a cifrari per trasposizione, anche per comunicare coi parenti. Sappiamo, in proposito che la cifratura era talmente tanto spesso utilizzata da Cesare, che Valerio Probo dedicò ai suoi cifrari un intero trattato, che purtroppo è andato perduto. Ma ci sono altre testimonianze, come quelle di Svetonio. Si legge infatti nelle “Vite dei Cesari“:
     \begin{displayquote}[Vita di Cesare, 56]
       \textit{Extant et ad Ciceronem, item ad familiares domesticis de rebus, in quibus, si qua occultius perferenda erant, per notas scripsit, id est sic structo litterarum ordine, ut nullum verbum effici posset: quae si qui investigare et persequi velit, quartam elementorum litteram, id est D pro A et perinde reliquas commutet.\\}
@@ -193,15 +194,26 @@
 
       \newpage
   \section{La crittografia quantistica}
+    Abbiamo acpito che un computer tradizionale non è in grado di scomporre numeri grandi, come quelli utilizzati nell'algotimo presentato, in un tempo ragionevole. Questa incapacità viene sfruttata da moltissimi algoritmi di criptazione e questi vengono utilizzati per proteggere i nostri dati più sensibili, come le credenziali bancarie.
+    Nel 1980 il fisico Paul Benioff propone il primo modello di comuter quantistico, basato su dei bit che non sono rappresentati da stati binari (0 e 1), ma da delle particelle subatomiche.
+    Queste particelle, a differenza dei bit classici, possono essere forzate in uno stato particolare chiamato \textit{Sovrapposizione Quantistica}, che è in grado di contenere un quantitativo di informazioni enorme.
+    Queste informazioni, grazie alle leggi della meccanica quantistica, possono essere processate in un tempo considerevolmente inferiore rispetto ai computer classici.
+    Al giorno d'oggi la realizzazione di un computer quantistica è molto complessa (sono necessarie temperature estremamente basse, vicine allo zero assoluto), ma non impossibile: la IBM, la Google e altri centri di ricerca hanno già sviluppato dei computer quantistici che contengono circa 50 qbits (bits quantistici).
+    Per quanto riguarda l'algoritmo di fatttorizzazione, nel 1994 l'informatico Peter Shor ha scritto una procedura che riesce a compiere il calcolo il un tempo irrisorio (nello specifico, il numero di operazioni è dell'ordine di $\log^2{N}\cdot\log{\log{N}}\cdot\log{\log{\log{N}}}$); l'unico problema prettamente pratico di questo algoritmo è che necessita all'incirca un milione di qbits per funzionare.
+    Con le tecnologie attuali, è impossibile realizzare un computer quantistico così potente, garantendo la validità degli algoritmi classici ancora per molti anni. Tuttavia, un calcolatore del genere potrebbe venir costruito in futuro, quindi c'è comunque la necessità di creare dei sistemi crittografici che siano in grado di resistere ai tentativi di attaco da parte di questi computer.
+    Questa nuova branca della crittografia è chiamata \textit{Crittografia Quantistica} e si concentra sul trovare un modo per trasmettere una chiave in modo sicuro sfruttando le leggi della meccanica quantistica.
+    I principali algoritmi quantistici sono il BB84, descritto in seguito, che si basa sulla polarizzazione dei fotoni, e l'ERBE, che sfrutta alune proprietà che delle particelle quantistiche "gemelle" possiedono.
     \subsection{Protocollo BB84}
-    Il protocollo che verrà descritto in seguito è il cosiddetto BB84, sviluppato da Charles H. Bennet e Gilles Brassard nel 1984.
+    Il protocollo BB84 è stato sviluppato da Charles H. Bennet e Gilles Brassard nel 1984.
     È stato il primo metodo di crittografia quantistica mai inventato ed è utilizzabile come metodo per comunicare in modo privato una chiave segreta tra due utenti per poi utilizzare un protocollo del tipo OTP, descritto in precedenza.\\
     \subsection{Principi fisici che garantiscono il funzionamento del BB84}
     Per sfruttare questo sistema si utilizza la luce. Per la meccanica quantistica la luce è composta da quantità discrete di energia, chiamate fotoni. Ogni fotone possiede anche un carattere ondulatorio che gli conferisce un proprio angolo di polarizzazione, definito come l'angolo tra il piano in cui essi oscillano e il piano di propagazione degli stessi fotoni.\\
     Normalmente una sorgente di luce produce fotoni a polarizzazione arbitraria. Per far assumere una particolare polarizzazione ad un fotone si utilizza un filtro polarizzatore, che permette solo ai fotoni con una determinata polarizzazione di proseguire il loro cammino. Ogni polarizzatore ha un angolo ben preciso di polarizzazione che chiameremo $\theta$.
     Ruotando opportunamente il filtro polarizzatore in modo che permetta il passaggio solo di fotoni con polarizzazione $\theta$, allora tutti i fotoni con polarizzazione diversa da $\theta$ vengono fermati, oppure oltrepassano il filtro con una polarizzazione $\theta$.
     Le leggi della meccanica quantistica ci dicono che un fotone inizialmente polarizzato con un angolo $\phi$ oltrepassa il filtro con la seguente probabilità:
-    $$p_{\theta}(\phi)=\cos^2(\phi-\theta)$$
+    \begin{equation}
+    p_{\theta}(\phi)=\cos^2(\phi-\theta) \label{prob}
+    \end{equation}
     La probabilità che venga respinto invece è naturalmente:
     $$1-p_{\theta}(\phi)=\sin^2(\phi-\theta)$$
     Per semplicità, supponiamo di utilizzare raggi luminosi che contengono un singolo fotone polarizzato.
@@ -282,7 +294,39 @@
     \end{center}
     ~
     \subsection{La meccanica quantistica ci fornisce il certificato di sicurezza}
-    Principio di indeterminazione di Eisenberg + Non-cloning theoerm.
+    Una delle classiche strategie di intercettazione utilizzate è il cosiddetto \textit{Man-in-the-middle}: L'origliatore, tipicamente chiamato Eva, intercetta le comunicazioni e ritrasmette al destinatario ciò che riceve.
+    In questo caso, Eva intercetta ogni fotone in una delle due basi e spedisce a Bob un fotone nello stato che ha rilevato:
+    in questo modo le informazioni corrrettamente captate saranno il 50\% di quelle totali.
+    Infatti,dalla \eqref{prob} possiamo ricavare le probabilità che ogni fotone attraversi una base:
+    \begin{center}
+      \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        &$\ang{0}$&$\ang{90}$&$\ang{45}$&$\ang{135}$\\
+        \hline
+        $\leftrightarrow$&1&0&0.5&0.5\\
+        \hline
+        $\updownarrow$&0&1&0.5&0.5\\
+        \hline
+        $\nearrow$&0.5&0.5&1&0\\
+        \hline
+        $\searrow$&0.5&0.50&1&0\\
+        \hline
+      \end{tabular}
+    \end{center}
+    Ad esempio, la probabilià che Eva riesca a captare correttamente un fotone polarizzato a $\ang{90}$ vale:
+    $$p(\ang{90})=\frac{p_{\ang{0}}(\ang{90})+p_{\ang{45}}(\ang{90})+p_{\ang{90}}(\ang{90})+p_{\ang{135}}(\ang{90})}{4}=\frac{0+1+0.5+0.5}{4}=0.5$$
+    La probablità che Eva spedisca il bit correttamente a Bob è però diversa da $p(\ang{90})$, perché per il principio di indeterminazione di Heisenberg, la misura comporta il collasso dello stato quantico del fotone: se inzialmente la polarizzazione della particella non è concorde con la base utilizzata, la misura obbliga il fotone ad orientarsi lungo uno dei due assi ortogonali del filtro utilizzato.
+    Di conseguenza, la probabilità che Bob ricevi correttamente il bit di Alice è descritta dalla seguente formula:
+    \begin{equation*}
+      \frac{\displaystyle\sum_{i\in A}\displaystyle\sum_{j\in A} p_i(\ang{90})\cdot p_j(\ang{90})}{16}=0.25
+    \end{equation*}
+    dove $A=\{\ang{0},\ang{45},\ang{90},\ang{135}\}$.\\
+    La probabilità di errore molto elevata permette di stabilire se la chiave è stata trasmessa in modo sicuro.
+    Se Eva decide di intercettare solo una parte dei bit totali, diventa più complesso stabilire se ci sono state interferenze; è stato comunque dimostrato che con un errore del 15\% è possibile stabilire con certezza la presenza di un intermediario.\\\\
+    Un'altra strategia che Eva potrebbe seguire è copiare il fotone trasmesso da Alice per poi effettuare le misurazioni quando le basi vengono rilevate. Oltre alle difficoltà incontrate nel conservare la particella, è dimostrato che clonare perfettamente una particella quantistica non è possibile.
+    Tuttavia, dobbiamo tenere in considerazione che esistono delle macchine che raggiungono un ottimo stato di clonazione compatibili col teorema di non-clonazione sopra citato.\\\\
+     Per concludere, non esistono metodi sufficientemente precisi per intercettare correttamente il messaggio senza essere scoperti dai due interlocutori legittimi.
+     \section{Conclusioni}
 
 
 
