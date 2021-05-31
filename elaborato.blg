@@ -1,0 +1,9 @@
+[0] Config.pm:312> INFO - This is Biber 2.15
+[0] Config.pm:315> INFO - Logfile is 'elaborato.blg'
+[112] biber:330> INFO - === lun mag 31, 2021, 19:19:56
+[130] Biber.pm:415> INFO - Reading 'elaborato.bcf'
+[220] Biber.pm:952> INFO - Found 0 citekeys in bib section 0
+[228] Utils.pm:395> WARN - The file 'elaborato.bcf' does not contain any citations!
+[243] bbl.pm:651> INFO - Writing 'elaborato.bbl' with encoding 'UTF-8'
+[244] bbl.pm:754> INFO - Output to elaborato.bbl
+[244] Biber.pm:128> INFO - WARNINGS: 1

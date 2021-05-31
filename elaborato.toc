@@ -1,13 +1,13 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
-\contentsline {section}{\numberline {2}Crittografia a chiave privata: Cifrario di Cesare}{3}{section.2}%
-\contentsline {section}{\numberline {3}Crittografia a chiave pubblica}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Algoritmo RSA}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Sicurezza del sistema RSA}{10}{subsection.3.2}%
-\contentsline {section}{\numberline {4}La crittografia quantistica}{12}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Protocollo BB84}{13}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Principi fisici che garantiscono il funzionamento del BB84}{13}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Procedimento operativo}{14}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}La meccanica quantistica ci fornisce il certificato di sicurezza}{16}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusioni}{18}{section.5}%
+\contentsline {section}{\numberline {1}Introduzione}{2}{section.1}%
+\contentsline {section}{\numberline {2}Crittografia a chiave privata: Cifrario di \\Cesare}{2}{section.2}%
+\contentsline {section}{\numberline {3}Crittografia a chiave pubblica}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Algoritmo RSA}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Sicurezza del sistema RSA}{9}{subsection.3.2}%
+\contentsline {section}{\numberline {4}La crittografia quantistica}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Protocollo BB84}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Principi fisici che garantiscono il funzionamento del BB84}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Procedimento operativo}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Le leggi che garantiscono la sicurezza del protocollo}{14}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusioni}{16}{section.5}%

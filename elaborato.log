@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.29)  31 MAY 2021 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.29)  31 MAY 2021 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -456,25 +456,25 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'italian'.
  (./elaborato.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Info: Redefining \it@ocap on input line 24.
-LaTeX Info: Redefining \it@ccap on input line 24.
-Package hyperref Info: Link coloring OFF on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Info: Redefining \it@ocap on input line 20.
+LaTeX Info: Redefining \it@ccap on input line 20.
+Package hyperref Info: Link coloring OFF on input line 20.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -487,9 +487,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count315
 )
-LaTeX Info: Redefining \ref on input line 24.
-LaTeX Info: Redefining \pageref on input line 24.
-LaTeX Info: Redefining \nameref on input line 24.
+LaTeX Info: Redefining \ref on input line 20.
+LaTeX Info: Redefining \pageref on input line 20.
+LaTeX Info: Redefining \nameref on input line 20.
 
 (./elaborato.out) (./elaborato.out)
 \@outlinefile=\write3
@@ -527,88 +527,178 @@ Dictionary: translator-basic-dictionary, Language: English
 .dict
 Dictionary: translator-basic-dictionary, Language: Italian 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
 
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+<logo.png, id=48, 513.92pt x 454.69875pt>
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 63.
+(pdftex.def)             Requested size: 102.78217pt x 90.93813pt.
+ [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./elaborato.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>] (./elaborato.
+toc)
 \tf@toc=\write4
- [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 60--71
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.72   \newpage
+                [1]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 80.
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 104--115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--71
+Underfull \hbox (badness 10000) in paragraph at lines 104--115
 
  []
 
-[4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--115
 
  []
 
-[6] [7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 178--181
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-[10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
+[5] [6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 221--224
 
  []
 
-[12] [13] [14]
-Overfull \hbox (27.39221pt too wide) in paragraph at lines 253--268
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+
+ []
+
+
+Overfull \hbox (28.63072pt too wide) in paragraph at lines 261--266
+\T1/cmr/m/n/12 Per i no-stri sco-pi, uti-liz-ze-re-mo so-lo quat-tro an-go-li d
+i po-la-riz-za-zio-ne: $[][]$,$[][]$,$[][]$,$[][]$. 
+ []
+
+[11] [12]
+Overfull \hbox (27.39221pt too wide) in paragraph at lines 295--310
  [] 
  []
 
-[15]
-Overfull \hbox (6.67824pt too wide) detected at line 317
+[13]
+Overfull \hbox (6.67824pt too wide) detected at line 359
 \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 ([][]) = [] = [] = 0\OML/cmm/m/it/12 :\OT1/cm
 r/m/n/12 5
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 322--329
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 364--371
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--329
+Underfull \hbox (badness 10000) in paragraph at lines 364--371
 
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 331--334
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 378--382
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--334
+Underfull \hbox (badness 10000) in paragraph at lines 378--382
 
  []
 
-[18] (./elaborato.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--385
+
+ []
+
+
+Overfull \hbox (20.85907pt too wide) in paragraph at lines 386--389
+\T1/cmr/m/n/12 Wikipedia, \T1/cmr/m/it/12 Ci-fra-rio di Ce-sa-re\T1/cmr/m/n/12 
+, https://it.wikipedia.org/wiki/Cifrario_di_Cesare 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--389
+
+ []
+
+
+Overfull \hbox (10.17834pt too wide) in paragraph at lines 386--389
+\T1/cmr/m/n/12 Wikipedia, \T1/cmr/m/it/12 One Ti-me Pad\T1/cmr/m/n/12 , https:/
+/it.wikipedia.org/wiki/Cifrario_di_Vernam 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--389
+
+ []
+
+[17] (./elaborato.aux)
 Package rerunfilecheck Info: File `elaborato.out' has not changed.
-(rerunfilecheck)             Checksum: 20AEF653C2BF7DC58F7A5603126ACD85;797.
+(rerunfilecheck)             Checksum: 22E14075DC58B3BE691B3B1B38918059;786.
  ) 
 Here is how much of TeX's memory you used:
- 11922 strings out of 479383
- 207774 string characters out of 5875830
- 547820 words of memory out of 5000000
- 28768 multiletter control sequences out of 15000+600000
- 420439 words of font info for 72 fonts, out of 8000000 for 9000
+ 11959 strings out of 479383
+ 208183 string characters out of 5875830
+ 547650 words of memory out of 5000000
+ 28791 multiletter control sequences out of 15000+600000
+ 427441 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,15n,73p,680b,912s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,15n,73p,655b,912s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/
 texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -620,14 +710,19 @@ ublic/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.
 pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share
 /texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fon
-ts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public
-/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1
-440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on elaborato.pdf (18 pages, 240121 bytes).
+ts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public
+/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1
+728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist
+/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
+frm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></u
+sr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-
+dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on elaborato.pdf (18 pages, 323016 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 46 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 94 words of extra memory for PDF output out of 10000 (max. 10000000)
 
