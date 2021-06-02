@@ -47,9 +47,8 @@
 
 
 % If you don't want a supervisor, uncomment the two lines below and remove the section above
-\Large \emph{Candidato:}\\
 Alessandro \textsc{Minisini}\\[1cm] % Your name
-{\large 5E}\\[2cm]
+{\large Classe 5E}\\[2cm]
 %----------------------------------------------------------------------------------------
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
@@ -71,22 +70,23 @@ Alessandro \textsc{Minisini}\\[1cm] % Your name
   \tableofcontents
   \newpage
   \section{Introduzione}
-  La crittografia è l'arte di creare "scritture nascoste", ovvero trovare dei metodi che rendano i messaggi incomprensibili alle persone non autorizzate a leggerlo. \\La crittografia è da sempre usata in ambito militare, diplomatico, bancario e commerciale, per garantire la giusta riservatezza alle comunicazioni tra le varie parti. I primi sistemi di crittografia, che prendono il nome di \textit{tecniche steganografiche}, sono originari dell'antica Grecia: venivano utilizzate delle aste di legno per codificare messaggi su cinture di cuoio, oppure si tendeva a nascondere il messaggio sotto ai capelli del corriere.\\
+  La crittografia è l'arte di creare "scritture nascoste", ovvero trovare dei metodi che rendano i messaggi incomprensibili alle persone non autorizzate a leggerlo. La crittografia è da sempre usata in ambito militare, diplomatico, bancario e commerciale, per garantire la giusta riservatezza alle comunicazioni tra le varie parti. I primi sistemi di crittografia, che prendono il nome di \textit{tecniche steganografiche}, sono originari dell'antica Grecia: venivano utilizzate delle aste di legno per codificare messaggi su cinture di cuoio, oppure si tendeva a nascondere il messaggio sotto ai capelli del corriere.\\\\
   Col tempo le varie tecniche si sono evolute: vennero creati dei cifrari a \textit{chiave privata}(la chiave per la cifratura permette di decifrare il messaggio): un esempio è rappresentato dal cifrario di Cesare, descritto in questo elaborato.
   Il problema principale di questi sistemi è la distribuzione della chiave, che necessita un canale sicuro tra i due interlocutori, non sempre realizzabile.\\
-  Per ovviare a questo fatto, sono stati inventati dei metodi a \textit{chiave pubblica}(la conoscenza della chiave di cifratura non permette la decifrazione) che fanno leva sulle nostre limitate capacità computazionali: uno di questi è l'algoritmo RSA, inventato da Whitfield Diffie e Martin Hellman nel 1976.\\
+  Per ovviare a questo fatto, sono stati inventati dei metodi a \textit{chiave pubblica}(la conoscenza della chiave di cifratura non permette la decifrazione) che fanno leva sulle nostre limitate capacità computazionali: uno di questi è l'algoritmo RSA, inventato da Whitfield Diffie e Martin Hellman nel 1976.\\\\
   Con la teorizzazione e la creazione dei primi computer quantistici, è sorta la necessità di trovare nuovi sistemi che non possano essere aggirati: nasce quindi negli anni ottanta la \textit{crittografia quantistica}.
 
     \section{Crittografia a chiave privata: Cifrario di \\Cesare}
     Il \textit{Cifrario di Cesare} è uno dei più antichi cifrari di cui si abbia traccia storica: veniva utilizzato dal generale romano in ambito militare per comunicare con i generali sparsi per l'impero.\\
-    Inizialmente Cesare, come scrive lui stesso nel "De bello gallico", cifrava i messaggi scambiando le lettere dell'alfabeto latino con quelle greche:
+    Inizialmente Cesare, come scrive lui stesso nel \textit{De bello Gallico}, cifrava i messaggi scambiando le lettere dell'alfabeto latino con quelle greche:
+    \newpage
     \begin{displayquote}[De Bello Gallico V, 48.2-4]
       \textit{ibi ex captivis cognoscit, quae apud Ciceronem gerantur quantoque in periculo res sit.
       Tum cuidam ex equitibus Gallis magnis preamiis persuadet, uti Ciceronem epistulam deferat.
       Hanc Graecis conscriptam litteris mittit, ne intecepta epistula nostra ab hostibus consilia cognoscantur.}
     \end{displayquote}
     Ai tempi di Cesare, questo sistema poteva essere considerato sicuro, poiché lo studio del greco era riservato solo alla classe dirigente, che poteva permettersi un precettore privato e viaggi di studio in Grecia.\\
-    Cesare ricorreva spessissimo a cifrari come quello appena descritto, anche per comunicare coi parenti. Sappiamo, a proposito, che la cifratura era talmente tanto spesso utilizzata da Cesare, che Valerio Probo dedicò ai suoi cifrari un intero trattato, che purtroppo è andato perduto. Ci sono, tuttavia, altre testimonianze, tra le quali Svetonio. Si legge, infatti, nelle “Vite dei Cesari“:
+    Cesare ricorreva spessissimo a cifrari come quello appena descritto, anche per comunicare coi parenti. Sappiamo, a proposito, che la cifratura era talmente tanto spesso utilizzata da Cesare, che Valerio Probo dedicò ai suoi cifrari un intero trattato, che purtroppo è andato perduto. Ci sono, tuttavia, altre testimonianze, tra le quali Svetonio. Si legge, infatti, nel \textit{De vita Caesarum}:
     \begin{displayquote}[Vita di Cesare, 56]
       \textit{Extant et ad Ciceronem, item ad familiares domesticis de rebus, in quibus, si qua occultius perferenda erant, per notas scripsit, id est sic structo litterarum ordine, ut nullum verbum effici posset: quae si qui investigare et persequi velit, quartam elementorum litteram, id est D pro A et perinde reliquas commutet.\\}
     \end{displayquote}
@@ -238,12 +238,13 @@ Alessandro \textsc{Minisini}\\[1cm] % Your name
       \newpage
   \section{La crittografia quantistica}
     Abbiamo capito che un computer tradizionale non è in grado di scomporre numeri grandi in un tempo ragionevole. Questa incapacità viene sfruttata da moltissimi algoritmi di criptazione e questi vengono utilizzati per proteggere i nostri dati più sensibili, come le credenziali bancarie.\\
-    Nel 1980 il fisico Paul Benioff propose il primo modello di computer quantistico, basato su dei bit\footnote{In informatica, l'unità di misura elementare dell'informazione.} che non sono rappresentati da stati binari (0 e 1), ma da delle particelle subatomiche (chiamate \textit{qbit}).\\
+    Nel 1980 i fisici Paul Benioff e Yuri Manin proposero il primo modello di computer quantistico, basato su dei bit\footnote{In informatica, il bit è l'unità di misura elementare dell'informazione.} che non sono rappresentati da stati binari (0 e 1), ma da delle particelle subatomiche (chiamate \textit{qbit}).\\
     Queste particelle, a differenza dei bit classici, possono essere forzate in uno stato particolare chiamato \textit{stato di sovrapposizione quantistica}, che permette di immagazzinare nel qbit un quantitativo di informazioni enorme.\\
-    Queste informazioni, grazie alle leggi della meccanica quantistica, possono essere processate in un tempo considerevolmente inferiore rispetto ai computer classici.\\
+    Queste informazioni, grazie alle leggi della meccanica quantistica, possono essere processate in un tempo considerevolmente inferiore rispetto ai computer classici.\\\\
     Al giorno d'oggi la realizzazione di un computer quantistico è molto complessa (sono necessarie temperature estremamente basse, vicine allo zero assoluto, e strumenti che generino onde e le indirizzino verso posizioni molto precise), ma non impossibile: la IBM, Google e altri centri di ricerca hanno già sviluppato dei computer quantistici formati da circa 50 qbits.\\
     Per quanto riguarda l'algoritmo di fattorizzazione, nel 1994 l'informatico Peter Shor ha scritto una procedura che riesce a compiere il calcolo in un tempo irrisorio (nello specifico, il numero di operazioni è dell'ordine di $\log^2{N}\cdot\log{\log{N}}\cdot\log{\log{\log{N}}}$, molto inferiore al tempo dell'algoritmo di Schroeppel); l'unico problema prettamente pratico di questo algoritmo è che necessita di all'incirca un milione di qbits per essere eseguito.
-    Con le tecnologie attuali, è impossibile realizzare un computer quantistico così potente, garantendo di fatto la validità degli algoritmi classici ancora per molti anni. Tuttavia, un calcolatore del genere potrebbe venir costruito in futuro, quindi sorge comunque la necessità di creare dei sistemi crittografici che siano in grado di resistere ai tentativi di attacco da parte di questi computer.\\
+    Con le tecnologie attuali, è impossibile realizzare un computer quantistico così potente, garantendo di fatto la validità degli algoritmi classici ancora per molti anni. Tuttavia, un calcolatore del genere potrebbe venir costruito in futuro, quindi sorge comunque la necessità di creare dei sistemi crittografici che siano in grado di resistere ai tentativi di attacco da parte di questi computer.\\\\
+    \newpage
     Questa nuova branca della crittografia è chiamata \textit{Crittografia Quantistica} e si concentra sul trovare un modo per trasmettere una chiave in modo sicuro sfruttando le leggi della meccanica quantistica.\\
     I principali algoritmi quantistici sono il BB84, descritto in seguito, che si basa sulla polarizzazione dei fotoni, e l'ERBE, che sfrutta alcune proprietà che particelle quantistiche "gemelle" possiedono.
     \subsection{Protocollo BB84}
@@ -368,7 +369,6 @@ Alessandro \textsc{Minisini}\\[1cm] % Your name
     Un'altra strategia che Eva potrebbe seguire è copiare il fotone trasmesso da Alice per poi effettuare le misurazioni quando le basi vengono rilevate. Oltre alle difficoltà incontrate nel conservare la particella, è dimostrato che clonare perfettamente una particella quantistica è impossibile (questo principio è chiamato \textit{teorema della non-clonazione}).
     Tuttavia, dobbiamo tenere in considerazione che esistono delle macchine che raggiungono un ottimo stato di clonazione compatibili col teorema sopra citato.\\\\
      Per concludere, non esistono metodi sufficientemente precisi per intercettare correttamente il messaggio senza essere scoperti dai due interlocutori legittimi.
-     \newpage
   \section{Conclusioni}
      Sebbene questi protocolli siano stati elaborati in un tempo recente e la teoria su cui si basano sia ancora in fase di studio, esistono in commercio vari strumenti sviluppati da varie nazioni che permettono lo scambio di una chiave in via quantistica.\\
      Inoltre, sono state realizzate delle reti di distribuzione di chiavi quantistiche in svariate aree del globo: la rete quantitica americana, realizzata tra il 2002 e il 2007, connette le università di Harvard e di Boston con la sede centrale della BBN technologies, una società di consulenza informatica locale.\\
